@@ -14,12 +14,22 @@ const config = {
     vendors: './src/vendors.js',
   },
   output: {
+    filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'build/dist'),
-    filename: '[name].[hash].js'
+    // publicPath: 'pms'  //  TODO:待查证 这是干嘛的，这个 放开的话，构建完成以后，访问页面时，会报 js 加载错误
   },
   module: {
     rules: [
-      { test: /\.txt$/, use: 'raw-loader' }
+      { test: /\.txt$/, use: 'raw-loader' },
+      { test: /\.css$/, use: [
+        { loader: 'style-loader' },
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+          },
+        },
+      ]},
     ]
   },
   plugins: [
