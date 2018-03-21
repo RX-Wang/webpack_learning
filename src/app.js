@@ -1,3 +1,5 @@
-require('../css/index.css');
-const test01 = require('./test01');
-test01.foo('app.js');
+import '../css/index.css';
+import {foo} from './test01';
+import {clickHandle} from './vendors';
+foo('app.js++++++-');
+clickHandle();

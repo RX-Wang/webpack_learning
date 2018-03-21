@@ -1,8 +1,8 @@
-body {
-  background: purple;
-}
 #app {
-  width: 200px;
-  height: 200px;
-  background-color: orchid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../src/resource/qzx.jpeg');
 }

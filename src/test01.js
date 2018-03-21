@@ -1,3 +1,3 @@
-exports.foo = function(text) {
-  alert(text)
+export function foo(text) {
+  console.log(text);
 }
