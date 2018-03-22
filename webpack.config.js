@@ -13,6 +13,7 @@ const config = {
   entry: {
     app: './src/app.js',
     vendors: './src/vendors.js',
+    libs: ['./lib/lib01.js','./lib/lib02.js','./lib/lib03.js'],
   },
   output: {
     filename: '[name].[hash].js',

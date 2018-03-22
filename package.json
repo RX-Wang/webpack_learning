@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/webpack --config webpack.config.js",
-    "start:dev": "./node_modules/.bin/webpack --config webpack.config.js && webpack-dev-server --hot --inline"
+    "dev": "webpack-dev-server --hot --inline --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
