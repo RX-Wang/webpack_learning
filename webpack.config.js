@@ -12,13 +12,13 @@ const config = {
   // 多个入口点的写法：
   entry: {
     app: './src/app.js',
-    vendors: './src/vendors.js',
+    vendor: ['jquery'],
     libs: ['./lib/lib01.js','./lib/lib02.js','./lib/lib03.js'],
   },
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'build/dist'),
-    /** 
+    /**
      * publicPath: 如果开启了该配置，webpack会在生成的html中引入 entry中的文件js时，加上
      * 该配置项指定的路径。
      * 例子：
@@ -59,6 +59,10 @@ const config = {
     // webpack 会自动将出口js文件加入到这个html文件中。
     new HtmlWebpackPlugin({template: './src/index.html'}),
     new ExtractTextPlugin('[name].css'),
+    // 提取公共代码块
+    new webpack.optimize.CommonsChunkPlugin({
+      name: ['vendor', 'manifest'],
+     }),
   ],
   // 这样写 会在浏览器的  sources 栏中加载源代码，方便调试
   devtool: "cheap-source-map",
