@@ -40,7 +40,13 @@ const config = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            { loader: 'css-loader', options: { importLoaders: 1 } },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                minimize: true, // 压缩 CSS 文件
+              }
+            },
             'postcss-loader'
           ]
         })
