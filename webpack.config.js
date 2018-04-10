@@ -61,7 +61,22 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      // 压缩优化
+      compress: {
+        warnings: false,
+        keep_fargs: true,
+        sequences: true,
+        dead_code: true,
+        conditionals: true,
+        booleans: true,
+        unused: true,
+        if_return: true,
+        join_vars: true,
+        drop_console: true, // 剔除代码中的console.*
+        drop_debugger: true, // 剔除代码中的 debugger
+      }
+    }),
     // webpack 会自动将出口js文件加入到这个html文件中。
     new HtmlWebpackPlugin({template: './src/index.html'}),
     new ExtractTextPlugin('[name].css'),
