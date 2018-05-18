@@ -19,8 +19,7 @@ const config = {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'build/dist'),
     /**
-     * publicPath: 如果开启了该配置，webpack会在生成的html中引入 entry中的文件js时，加上
-     * 该配置项指定的路径。
+     * publicPath: 如果开启了该配置，webpack会在生成的html中引入 entry中的文件js时，加上该配置项指定的路径。
      * 例子：
      *  不加时： <script src="app.123456876543.js">
      *  加了 publicPath: 'assets/'时： <script src="assets/app.12345654321.js">
@@ -31,7 +30,7 @@ const config = {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        // 这里想要成功的haul需要安装 babel-core 依赖包。
+        // 这里想要成功的话需要安装 babel-core 依赖包。
         use: 'babel-loader'
       },
       { test: /\.txt$/, use: 'raw-loader' },

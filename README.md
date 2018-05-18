@@ -1,3 +1,4 @@
+> webpack 3.11.0
 ## 一、devServer
 #### 1、热更新 --- hot: true
 在 webpack.config.js 中添加：
